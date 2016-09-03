@@ -38,6 +38,8 @@
     
     _dismissAnimation = [MenuDismissAnimation new];
     
+    self.title = @"Main";
+    
 }
 
 -(void)showMenu {

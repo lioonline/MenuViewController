@@ -17,6 +17,7 @@
 		9B1A63251D76709300D8329B /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B1A63241D76709300D8329B /* MainViewController.m */; };
 		9B1A63281D767C0F00D8329B /* MenuPresentAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B1A63271D767C0F00D8329B /* MenuPresentAnimation.m */; };
 		9B7D87D41D77C0400096BAE1 /* MenuDismissAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B7D87D31D77C0400096BAE1 /* MenuDismissAnimation.m */; };
+		9BB802B61D7B348700794129 /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BB802B51D7B348700794129 /* SecondViewController.m */; };
 		E95C952B89E170D5AECE15A3 /* libPods-MenuViewController.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AC3326C557C19B45D6693BA3 /* libPods-MenuViewController.a */; };
 /* End PBXBuildFile section */
 
@@ -41,6 +42,8 @@
 		9B1A63271D767C0F00D8329B /* MenuPresentAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuPresentAnimation.m; sourceTree = "<group>"; };
 		9B7D87D21D77C0400096BAE1 /* MenuDismissAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuDismissAnimation.h; sourceTree = "<group>"; };
 		9B7D87D31D77C0400096BAE1 /* MenuDismissAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuDismissAnimation.m; sourceTree = "<group>"; };
+		9BB802B41D7B348700794129 /* SecondViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
+		9BB802B51D7B348700794129 /* SecondViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
 		AC3326C557C19B45D6693BA3 /* libPods-MenuViewController.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MenuViewController.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -114,6 +117,8 @@
 				9B1A63241D76709300D8329B /* MainViewController.m */,
 				9B1A63201D766C9100D8329B /* MenuViewController.h */,
 				9B1A63211D766C9100D8329B /* MenuViewController.m */,
+				9BB802B41D7B348700794129 /* SecondViewController.h */,
+				9BB802B51D7B348700794129 /* SecondViewController.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -272,6 +277,7 @@
 				9B1A630E1D766C5700D8329B /* AppDelegate.m in Sources */,
 				9B7D87D41D77C0400096BAE1 /* MenuDismissAnimation.m in Sources */,
 				9B1A630B1D766C5700D8329B /* main.m in Sources */,
+				9BB802B61D7B348700794129 /* SecondViewController.m in Sources */,
 				9B1A63281D767C0F00D8329B /* MenuPresentAnimation.m in Sources */,
 				9B1A63251D76709300D8329B /* MainViewController.m in Sources */,
 				9B1A63221D766C9100D8329B /* MenuViewController.m in Sources */,

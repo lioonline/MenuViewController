@@ -7,11 +7,12 @@
 //
 
 #import "MenuViewController.h"
-
+#import "SecondViewController.h"
 @interface MenuViewController ()<UITableViewDelegate,UITableViewDataSource>
 
 @property (nonatomic,strong)UIView *whiteBgview;
 @property (nonatomic,strong)UIView *blackTranslucentBackground;
+@property (nonatomic,strong)NSArray *titleArray;
 @end
 
 @implementation MenuViewController
@@ -20,15 +21,17 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
+    _titleArray = @[@"Settings",@"Bio",@"About"];
+    
     self.view.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:0.5];
     
-    [self.view bk_whenTapped:^{
-        
-        if ([self.delegate respondsToSelector:@selector(presentViewControllerDissmiss:)]) {
-            
-            [self.delegate presentViewControllerDissmiss:self];
-        }
-    }];
+//    [self.view bk_whenTapped:^{
+//        
+//        if ([self.delegate respondsToSelector:@selector(presentViewControllerDissmiss:)]) {
+//            
+//            [self.delegate presentViewControllerDissmiss:self];
+//        }
+//    }];
     
     self.view.clipsToBounds = NO;
     
@@ -49,6 +52,19 @@
 
     
     
+    
+    UIView *tapView = [[UIView alloc] initWithFrame:CGRectMake([UIScreen mainScreen].bounds.size.width * 0.75, 0, [UIScreen mainScreen].bounds.size.width * 0.25, [UIScreen mainScreen].bounds.size.height)];
+    [self.view addSubview:tapView];
+        [tapView bk_whenTapped:^{
+    
+            if ([self.delegate respondsToSelector:@selector(presentViewControllerDissmiss:)]) {
+    
+                [self.delegate presentViewControllerDissmiss:self];
+            }
+        }];
+    
+    
+    
     UITableView *tableView = [[UITableView alloc] initWithFrame:_whiteBgview.bounds style:UITableViewStyleGrouped];
     
     tableView.delegate = self;
@@ -57,7 +73,7 @@
     
     [_whiteBgview addSubview:tableView];
     
-    
+    tableView.backgroundColor  = [UIColor colorWithRed:73/255.0 green:68/255.0 blue:65/255.0 alpha:1];
     
     
     
@@ -158,7 +174,7 @@
 
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return 5;
+    return _titleArray.count;
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -168,6 +184,7 @@
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:idf];
     }
     
+    cell.textLabel.text = _titleArray[indexPath.row];
     
     return cell;
 }
@@ -179,12 +196,39 @@
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
-    return 120;
+    return 188;
 }
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     NSLog(@"indexPath.row:%ld",(long)indexPath.row);
+    
+    if ([self.delegate respondsToSelector:@selector(presentViewControllerDissmiss:)]) {
+        
+        [self.delegate presentViewControllerDissmiss:self];
+    }
+    
+    SecondViewController *second = [[SecondViewController alloc] initWithTitle:_titleArray[indexPath.row]];
+    
+    UINavigationController *nav = (UINavigationController *)self.nextResponder;
+    
+    [nav pushViewController:second animated:YES];
 
+}
+
+-(UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
+    
+    UIView *header = [UIView new];
+    
+    header.frame = CGRectMake(0, 0, tableView.bounds.size.width, 188);
+    
+    UIImageView *imageView = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"Dylan McKay"]];
+    imageView.center = header.center;
+    
+    imageView.bounds = CGRectMake(0, 0, 105, 105);
+    
+    [header addSubview:imageView];
+    
+    return header;
 }
 
 - (void)didReceiveMemoryWarning {
